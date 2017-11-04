@@ -1,0 +1,64 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+
+    <group name="walls">
+        <transform name="right-wall">
+            <set>
+                <translate> 200 0 -150 </translate>
+                <scale> 2 300 200 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <ambient>.5 0 1</ambient>
+                        <diffuse> .5 0 1 </diffuse>
+                        <specular> .5 0 1 </specular>
+                        <shininess>1</shininess>
+                    </material>
+                </object>
+            </group>
+        </transform>
+        <transform name="left-wall">
+            <set>
+                <translate>-400 0 0</translate>
+            </set>
+            <group copyof="right-wall">
+            </group>
+        </transform>
+        <transform name="back-wall">
+            <set>
+                <translate> 0 0 -250 </translate>
+                <scale> 400 300 2 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <ambient>0 1 1 </ambient>
+                        <diffuse> 0 1 1  </diffuse>
+                        <specular> 0 1 1  </specular>
+                        <shininess>1</shininess>
+                    </material>
+                </object>
+            </group>
+        </transform>
+        <transform name="floor">
+            <set>
+                <translate> 0 -150 -150 </translate>
+                <scale> 400 2 200 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <ambient>0 0 1  </ambient>
+                        <diffuse>0 0 1   </diffuse>
+                        <specular>0 0 1   </specular>
+                        <shininess>1</shininess>
+                    </material>
+                </object>
+            </group>
+        </transform>
+    </group>
+</scene>

@@ -1,0 +1,204 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+
+    <group name="walls">
+        <group name="fixed-walls">
+            <transform name="floor">
+                <set>
+                    <translate> 0 -150 -150 </translate>
+                    <scale> 400 2 200 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 0 0 1 </ambient>
+                            <diffuse> 0 0 1 </diffuse>
+                            <specular> 0 0 1 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+            <transform name="ceiling">
+                <set>
+                    <translate>0 300 0</translate>
+                </set>
+                <group copyof="floor">
+                </group>
+            </transform>
+        </group>
+
+        <group name="back-wall">
+            <transform>
+                <set>
+                    <translate> 0 0 -250 </translate>
+                    <scale> 400 300 2 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 0 1 1 </ambient>
+                            <diffuse> 0 1 1 </diffuse>
+                            <specular> 0 1 1 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+        </group>
+
+        <group name="front-wall">
+            <transform name="above-frontdoor-wall">
+                <set>
+                    <translate> 0 100 -50 </translate>
+                    <scale> 400 100 2 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 1 1 0 </ambient>
+                            <diffuse> 1 1 0 </diffuse>
+                            <specular> 1 1 0 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+
+            <transform name="leftof-frontdoor-wall">
+                <set>
+                    <translate> -125 -50 -50 </translate>
+                    <scale> 150 200 2 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 1 1 0 </ambient>
+                            <diffuse> 1 1 0 </diffuse>
+                            <specular> 1 1 0 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+
+
+            <transform name="rightof-frontdoor-wall">
+                <set>
+                    <translate>250 0 0</translate>
+
+                </set>
+                <group copyof="leftof-frontdoor-wall">
+                </group>
+            </transform>
+        </group>
+
+        <group name = "window-wall">
+            <transform name="window">
+                <set>
+                    <translate> 200 0 -150 </translate>
+                    <scale> 2 100 66 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient>.5 0 1</ambient>
+                            <diffuse> .5 0 1 </diffuse>
+                            <specular> .5 0 1 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+
+            <transform name="above-window-wall">
+                <set>
+                    <translate> 200 100 -150 </translate>
+                    <scale> 2 100 200 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 1 1 0 </ambient>
+                            <diffuse> 1 1 0 </diffuse>
+                            <specular> 1 1 0 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+
+            <transform name="below-window-wall">
+                <set>
+                    <translate>0 -200 0</translate>
+                </set>
+                <group copyof="above-window-wall">
+                </group>
+            </transform>
+
+            <transform name="rightof-window-wall">
+                <set>
+                    <translate> 200 0 -217 </translate>
+                    <scale> 2 100 66 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 1 1 0 </ambient>
+                            <diffuse> 1 1 0 </diffuse>
+                            <specular> 1 1 0 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+
+            <transform name="leftof-window-wall">
+                <set>
+                    <translate>0 0 134</translate>
+                </set>
+                <group copyof="rightof-window-wall">
+                </group>
+            </transform>
+        </group>
+
+        <group name="side-door-wall">
+            <transform name="above-door-wall">
+                <set>
+                    <translate>-400 0 0</translate>
+                </set>
+                <group copyof="above-window-wall">
+                </group>
+            </transform>
+
+            <transform name="rightof-door-wall">
+                <set>
+                    <translate> -200 -50 -217 </translate>
+                    <scale> 2 200 66 </scale>
+                </set>
+                <group>
+                    <object instanceof="box">
+                        <material>
+                            <ambient> 1 1 0 </ambient>
+                            <diffuse> 1 1 0 </diffuse>
+                            <specular> 1 1 0 </specular>
+                            <shininess>1</shininess>
+                        </material>
+                    </object>
+                </group>
+            </transform>
+
+            <transform name="leftof-door-wall">
+                <set>
+                    <translate>0 0 134</translate>
+                </set>
+                <group copyof="rightof-door-wall">
+                </group>
+            </transform>
+        </group>
+    </group>
+
+</scene>

@@ -1,0 +1,186 @@
+<scene>
+	<instance name="sphere" path="models/sphere.obj" />
+	<instance name="box" path="models/box.obj" />
+	<instance name="cylinder" path="models/cylinder.obj" />
+	<instance name="cone" path="models/cone.obj" />
+	<instance name="hourglass" path="models/hourglass.obj" />
+
+	<group name="table">
+		<transform name="table-leg-upper-left">
+			<set>
+				<translate> -50 -115 -130 </translate>
+				<scale> 10 100 10 </scale>
+			</set>
+			<group>
+				<object instanceof="cylinder">
+					<material>
+						<ambient>1 1 1</ambient>
+						<diffuse> 1 1 1 </diffuse>
+						<specular>1 1 1</specular>
+						<shininess>1</shininess>
+					</material>
+				</object>
+			</group>
+		</transform>
+
+		<transform name="table-leg-upper-right">
+			<set>
+				<translate> 100 0 20</translate>
+			</set>
+			<group copyof="table-leg-upper-left">
+			</group>
+		</transform>
+
+		<transform name="table-leg-lower-left">
+			<set>
+				<translate> 0 0 120</translate>
+			</set>
+			<group copyof="table-leg-upper-left">
+			</group>
+		</transform>
+
+		<transform name="table-leg-lower-right">
+			<set>
+				<translate> 100 0 120</translate>
+			</set>
+			<group copyof="table-leg-upper-left">
+			</group>
+		</transform>
+
+		<transform name="table-top">
+			<set>
+				<translate> 0 -25 -70 </translate>
+				<scale> 125 10 80 </scale>
+			</set>
+			<group>
+				<object instanceof="cylinder">
+					<material>
+						<ambient>1 1 1</ambient>
+						<diffuse> 1 1 1 </diffuse>
+						<specular>1 1 1</specular>
+						<shininess>1</shininess>
+					</material>
+				</object>
+
+                <light>
+                    <ambient>0.3 0.3 0.3</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 0 1</specular>
+                    <position>200 200 0</position>
+                    <spotdirection>0 1 0</spotdirection>
+                    <spotangle>10</spotangle>
+                </light>
+			</group>
+		</transform>
+
+		<group name="tree">
+			<transform>
+				<set>
+					<translate> -60 -5 -50 </translate>
+					<scale> 35 50 35 </scale>
+				</set>
+				<group>
+					<object instanceof="cone">
+						<material>
+							<ambient>0 1 0 </ambient>
+							<diffuse> 0 1 0  </diffuse>
+							<specular>0 1 0 </specular>
+							<shininess>1</shininess>
+						</material>
+					</object>
+				</group>
+			</transform>
+
+			<transform>
+				<set>
+					<translate> -60 -20 -50 </translate>
+					<scale> 10 20 10 </scale>
+				</set>
+				<group>
+					<object instanceof="cylinder">
+						<material>
+							<ambient>0 0 0 </ambient>
+							<diffuse> 0 0 0  </diffuse>
+							<specular>0 0 0 </specular>
+							<shininess>1</shininess>
+						</material>
+					</object>
+				</group>
+			</transform>
+
+		</group>
+
+		<group name="lamp">
+			<transform>
+				<set>
+					<translate> 0 0 -50 </translate>
+					<scale> 25 15 25 </scale>
+				</set>
+				<group>
+					<object instanceof="sphere">
+						<material>
+							<ambient>0 0 1 </ambient>
+							<diffuse>0 0 1</diffuse>
+							<specular>0 0 1</specular>
+							<shininess>1</shininess>
+						</material>
+					</object>
+				</group>
+			</transform>
+
+			<transform>
+				<set>
+					<translate> 0 20 -50 </translate>
+					<scale> 5 20 5 </scale>
+				</set>
+				<group>
+					<object instanceof="box">
+						<material>
+							<ambient>1 0 1 </ambient>
+							<diffuse>1 0 1</diffuse>
+							<specular>1 0 1</specular>
+							<shininess>1</shininess>
+						</material>
+					</object>
+				</group>
+			</transform>
+
+			<transform>
+				<set>
+					<translate> 0 20 -50 </translate>
+					<scale> 20 30 5 </scale>
+				</set>
+				<group>
+					<object instanceof="cylinder">
+						<material>
+							<ambient>0 0 1 </ambient>
+							<diffuse>0 0 1</diffuse>
+							<specular>0 0 1</specular>
+							<shininess>1</shininess>
+						</material>
+					</object>
+				</group>
+			</transform>
+
+		</group>
+
+		<transform name="hourglass">
+			<set>
+				<translate> 65 -20 -50 </translate>
+				<scale> 30 30 30 </scale>
+			</set>
+			<group>
+				<object instanceof="hourglass">
+					<material>
+						<ambient>10 0 10 </ambient>
+						<diffuse>1 1 1</diffuse>
+						<specular>1 1 1</specular>
+						<shininess>10</shininess>
+					</material>
+
+				</object>
+			</group>
+		</transform>
+	</group>
+
+</scene>
