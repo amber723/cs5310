@@ -1,0 +1,14 @@
+README FILE:
+
+KeyBoard:
+1,2,3: switch lights;
+
+up, down: move forward/backward;
+left, right: node no; turn camera left/right
+q,w: node yes; turn camera down/up
+
+
+All the lighting basics work, as well as spotlights and materials on the models. There are three lights, with at least one being a spotlight. The model is movable with two independent degrees of motion and at least 10 object instances. It is animated with rotating wheels and an arm moving up/down. 
+
+Here's the link to the animation video:
+https://youtu.be/m3TAdUL3X9k
