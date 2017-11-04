@@ -1,0 +1,153 @@
+<scene>
+	<instance name="sphere" path="models/sphere.obj" />
+	<instance name="box" path="models/box.obj" />
+	<instance name="cylinder" path="models/cylinder.obj" />
+	<instance name="cone" path="models/cone.obj" />
+	<instance name="hourglass" path="models/hourglass.obj" />
+
+	<group name="table">
+
+		<transform name="table-leg-upper-left">
+			<set>
+				<translate> -50 -115 -150 </translate>
+				<scale> 10 100 10 </scale>
+			</set>
+			<group>
+				<object instanceof="cylinder">
+					<material>
+					<color> 1 1 1 </color>
+					</material>
+				</object>			
+			</group>
+		</transform>
+	
+		<transform name="table-leg-upper-right">
+			<set>
+				<translate> 100 0 0</translate>
+			</set>
+			<group copyof="table-leg-upper-left">
+			</group>
+		</transform>
+	
+		<transform name="table-leg-lower-left">
+			<set>
+				<translate> 0 0 100</translate>
+			</set>
+			<group copyof="table-leg-upper-left">
+			</group>
+		</transform>
+	
+		<transform name="table-leg-lower-right">
+			<set>
+				<translate> 100 0 100</translate>
+			</set>
+			<group copyof="table-leg-upper-left">
+			</group>
+		</transform>
+
+		<transform name="table-top">
+			<set>
+				<translate> 0 -25 -90 </translate>
+				<scale> 125 10 100 </scale>
+			</set>
+			<group>
+				<object instanceof="cylinder">
+					<material>
+						<color> 1 1 1 </color>
+					</material>
+				</object>
+			</group>
+		</transform>
+
+		<group name="tree">
+			<transform>
+			<set>
+				<translate> -60 -5 -50 </translate>
+				<scale> 35 50 35 </scale>
+			</set>
+			<group>
+				<object instanceof="cone">
+					<material>
+						<color> 0 1 0 </color>
+					</material>
+				</object>
+			</group>
+			</transform>
+
+			<transform>
+			<set>
+				<translate> -60 -20 -50 </translate>
+				<scale> 10 20 10 </scale>
+			</set>
+			<group>
+				<object instanceof="cylinder">
+					<material>
+						<color> 0 0 0 </color>
+					</material>
+				</object>
+			</group>
+			</transform>
+
+	</group>
+
+	<group name="lamp">
+			<transform>
+			<set>
+				<translate> 0 0 -50 </translate>
+				<scale> 25 15 25 </scale>
+			</set>
+			<group>
+				<object instanceof="sphere">
+					<material>
+						<color> 0 0 1</color>
+					</material>
+				</object>
+			</group>
+			</transform>
+
+			<transform>
+			<set>
+				<translate> 0 20 -50 </translate>
+				<scale> 5 20 5 </scale>
+			</set>
+			<group>
+				<object instanceof="box">
+					<material>
+						<color> 1 0 1 </color>
+					</material>
+				</object>
+			</group>
+			</transform>
+
+			<transform>
+			<set>
+				<translate> 0 20 -50 </translate>
+				<scale> 20 30 5 </scale>
+			</set>
+			<group>
+				<object instanceof="cylinder">
+					<material>
+						<color> 0 0 1 </color>
+					</material>
+				</object>
+			</group>
+			</transform>
+
+	</group>
+
+	<transform name="hourglass">
+		<set>
+				<translate> 65 -20 -50 </translate>
+				<scale> 30 30 30 </scale>
+			</set>
+			<group>
+				<object instanceof="hourglass">
+					<material>
+						<color> 1 0 0</color>
+					</material>
+				</object>
+			</group>
+		</transform>
+</group>
+
+</scene>

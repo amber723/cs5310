@@ -1,0 +1,39 @@
+<scene>
+    <group name="room-1">
+        <transform>
+            <set>
+                <translate>0 0 100</translate>
+            </set>
+            <group name="walls" from="scenegraphmodels/room1.xml">
+            </group>
+        </transform>
+
+        <transform>
+            <set>
+                <translate>0 -35 0</translate>
+                <scale> 1 1 0.5</scale>
+            </set>
+            <group name="table" from="scenegraphmodels/table.xml">
+            </group>
+        </transform>
+    </group>
+    <group name="room-2">
+        <transform>
+            <set>
+                <translate>400 0 100</translate>
+            </set>
+            <group name="room2" from="scenegraphmodels/room2.xml">
+            </group>
+        </transform>
+    </group>
+    <group name="room-3">
+        <transform>
+            <set>
+                <translate>0 0 -100</translate>
+            </set>
+            <group name="walls" from="scenegraphmodels/room3.xml">
+            </group>
+        </transform>
+    </group>
+</scene>
+
